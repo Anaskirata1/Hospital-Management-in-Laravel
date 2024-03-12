@@ -1,0 +1,8 @@
+1)_ install laravel project 
+2)_ install package mcamara/laravel-localization for languages
+3)_ install package Astrotomic/laravel-translatable
+4)_ install laravel/breeze
+5)_ create database 
+6)_ install dashboard
+7)_ create Dashboard Controller
+8)_ 
