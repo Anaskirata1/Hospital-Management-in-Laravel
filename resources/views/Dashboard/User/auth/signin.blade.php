@@ -1,5 +1,10 @@
 @extends('Dashboard.layouts.master2')
 @section('css')
+<style>
+    .loginform{
+        display: none ;
+    }
+</style>
 <!-- Sidemenu-respoansive-tabs css -->
 <link href="{{URL::asset('Dashboard/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css')}}" rel="stylesheet">
 @endsection
@@ -26,6 +31,21 @@
 										<div class="card-sigin">
 											<div class="main-signup-header">
 												<h2>Welcome back!</h2>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1">حدد طريقة الدخول </label>
+                                                    <select class="form-control" id="sectionChooser">
+                                                        <option value="" selected disabled>اختر من القائمة</option>
+                                                      <option value="user">الدخول كمريض</option>
+                                                      <option value="admin">الدخول كادمن</option>
+
+                                                    </select>
+                                                  </div>
+
+
+
+                                                  {{-- form user  --}}
+                                                  <div class="loginform" id="user">
 												<h5 class="font-weight-semibold mb-4">الدخول كمستخدم</h5>
 												<form method="POST" action="{{ route('login.user') }}">
                                                     @csrf
@@ -48,6 +68,36 @@
 													<p><a href="">Forgot password?</a></p>
 													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
 												</div>
+                                            </div>
+											</div>
+
+
+
+                                            {{-- form admin  --}}
+                                            <div class="loginform" id="admin">
+												<h5 class="font-weight-semibold mb-4">الدخول ادمن</h5>
+												<form method="POST" action="{{ route('login.admin') }}">
+                                                    @csrf
+													<div class="form-group">
+														<label>Email</label> <input class="form-control" name="email" :value="old('email')" placeholder="Enter your email" type="email">
+													</div>
+													<div class="form-group">
+														<label>Password</label> <input class="form-control" placeholder="Enter your password" name="password" type="password">
+													</div><button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
+													<div class="row row-xs">
+														<div class="col-sm-6">
+															<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+														</div>
+														<div class="col-sm-6 mg-t-10 mg-sm-t-0">
+															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+														</div>
+													</div>
+												</form>
+												<div class="main-signin-footer mt-5">
+													<p><a href="">Forgot password?</a></p>
+													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+												</div>
+                                            </div>
 											</div>
 										</div>
 									</div>
@@ -60,4 +110,12 @@
 		</div>
 @endsection
 @section('js')
+<script>
+    $('#sectionChooser').change(function(){
+        var myID = $(this).val();
+        $('.loginform').each(function(){
+            myID === $(this).attr('id') ? $(this).show() : $(this).hide()
+        })
+    })
+</script>
 @endsection

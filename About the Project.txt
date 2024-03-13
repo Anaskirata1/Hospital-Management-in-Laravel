@@ -5,4 +5,7 @@
 5)_ create database 
 6)_ install dashboard
 7)_ create Dashboard Controller
-8)_ 
+8)_ Login & Guarded
+9)_ create User dashboard
+10)_ create AdminController
+11)_ create Admin dashboard

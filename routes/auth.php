@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AdminController ;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -17,11 +18,22 @@ Route::middleware('guest')->group(function () {
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('User/login', [AuthenticatedSessionController::class, 'create'])
+//////////////////////////// Route User ////////////////////////////////
+
+    Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
     Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('login.user');
 
+    //////////////////////////// Route Admin ////////////////////////////////
+
+    Route::post('login/admin', [AdminController::class, 'store'])->name('login.admin');
+
+    // Route::post('logout/admin', [AdminController::class, 'destroy'])
+    // ->name('logout.admin');
+    // Route::post('/logout/admin', [AdminController::class, 'destroy'])->middleware('auth:admin')->name('logout.admin');
+
+///////////////////////////////////////////////////////////////////////////////
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');
 
@@ -56,4 +68,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::post('logout/admin', [AdminController::class, 'destroy'])->name('logout.admin');
 });
