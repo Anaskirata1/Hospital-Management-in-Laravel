@@ -18,12 +18,22 @@ use App\Http\Controllers\Dashboard\DashboardController ;
 
 Route::get('/Dashboard_Admin', [DashboardController::class, 'index']);
 
-Route::get('/dashboard/user', function () {
-    return view('Dashboard.User.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard.user');
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 
-Route::get('/dashboard/admin', function () {
-    return view('Dashboard.Admin.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('dashboard.admin');
+        Route::get('/dashboard/user', function () {
+            return view('Dashboard.User.dashboard');
+        })->middleware(['auth', 'verified'])->name('dashboard.user');
 
-require __DIR__.'/auth.php';
+        Route::get('/dashboard/admin', function () {
+            return view('Dashboard.Admin.dashboard');
+        })->middleware(['auth:admin', 'verified'])->name('dashboard.admin');
+
+        require __DIR__.'/auth.php';
+
+    });
+
+
