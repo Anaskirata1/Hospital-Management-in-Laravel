@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// use App\Http\Requests\Auth\AdminRequest;
 use App\Http\Requests\Auth\AdminRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -39,15 +40,16 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AdminLoginRequest $request)
+    public function store(AdminRequest $request)
     {
         if($request->authenticate()){
             $request->session()->regenerate();
+
             return redirect()->intended(RouteServiceProvider::ADMIN);
         }
 
-        return redirect()->back()->withErrors(['name' => (trans('Dashboard/auth.failed'))]);
-        // return redirect()->back()->withErrors(['name' => 'يوجد خطأ في كلمة المرور أو اسم المستخدم']) ;
+        // return redirect()->back()->withErrors(['name' => (trans('Dashboard/auth.failed'))]);
+        return redirect()->back()->withErrors(['name' => 'يوجد خطأ في كلمة المرور أو اسم المستخدم']) ;
 
 
     }

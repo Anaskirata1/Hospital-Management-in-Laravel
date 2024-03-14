@@ -66,19 +66,19 @@
 													</div>
 													<div class="form-group">
 														<label>Password</label> <input class="form-control" placeholder="Enter your password" name="password" type="password">
-													</div><button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
+													</div><button type="submit" class="btn btn-main-primary btn-block">{{ trans('Dashboard/login_trans.Sign_In') }}</button>
 													<div class="row row-xs">
 														<div class="col-sm-6">
-															<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+															<button class="btn btn-block"><i class="fab fa-facebook-f"></i>{{ trans('Dashboard/login_trans.Facebook') }}</button>
 														</div>
 														<div class="col-sm-6 mg-t-10 mg-sm-t-0">
-															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i>{{ trans('Dashboard/login_trans.Twitter') }}</button>
 														</div>
 													</div>
 												</form>
 												<div class="main-signin-footer mt-5">
-													<p><a href="">Forgot password?</a></p>
-													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+													<p><a href="">{{ trans('Dashboard/login_trans.Forgot') }}</a></p>
+													<p>{{ trans('Dashboard/login_trans.Do_not') }} <a href="{{ url('/' . $page='signup') }}">{{ trans('Dashboard/login_trans.Create') }}</a></p>
 												</div>
                                             </div>
 											</div>
@@ -95,19 +95,19 @@
 													</div>
 													<div class="form-group">
 														<label>Password</label> <input class="form-control" placeholder="Enter your password" name="password" type="password">
-													</div><button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
+													</div><button type="submit" class="btn btn-main-primary btn-block">{{ trans('Dashboard/login_trans.Sign_In') }} </button>
 													<div class="row row-xs">
 														<div class="col-sm-6">
-															<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+															<button class="btn btn-block"><i class="fab fa-facebook-f"></i>{{ trans('Dashboard/login_trans.Facebook') }}</button>
 														</div>
 														<div class="col-sm-6 mg-t-10 mg-sm-t-0">
-															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i>{{ trans('Dashboard/login_trans.Twitter') }}</button>
 														</div>
 													</div>
 												</form>
 												<div class="main-signin-footer mt-5">
-													<p><a href="">Forgot password?</a></p>
-													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+													<p><a href="">{{ trans('Dashboard/login_trans.Forgot') }}</a></p>
+													<p>{{ trans('Dashboard/login_trans.Do_not') }} <a href="{{ url('/' . $page='signup') }}">{{ trans('Dashboard/login_trans.Create') }}</a></p>
 												</div>
                                             </div>
 											</div>
