@@ -11,5 +11,8 @@
 11)_ create Admin dashboard
 12)_ Update Style Rtl & Ltr Mcamara
 13)_ create admin & user seeder
-14)_  Translations
-15) _
+14)_ Translations
+15)_ create table sectionTranslations
+16)_ create table section
+17)_ create model section
+18)_ create model sectionTranslations
