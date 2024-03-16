@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController ;
+use App\Http\Controllers\Dashboard\SectionController ;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,16 @@ Route::group(
         Route::get('/dashboard/admin', function () {
             return view('Dashboard.Admin.dashboard');
         })->middleware(['auth:admin', 'verified'])->name('dashboard.admin');
+
+
+
+
+        // ----------------------------------------------------------------------------------------
+
+        Route::middleware(['auth:admin'])->group(function () {
+
+            Route::resource('Sections', SectionController::class);
+        });
 
         require __DIR__.'/auth.php';
 

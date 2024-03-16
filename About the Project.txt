@@ -16,3 +16,7 @@
 16)_ create table section
 17)_ create model section
 18)_ create model sectionTranslations
+19)_ work on Design Pattern
+20)_ create folder Interfaces & Repository
+21)_ create RepositoryServiceProvider 
+22)_ Insert Update Delete Table Sections
