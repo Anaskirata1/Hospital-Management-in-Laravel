@@ -20,3 +20,13 @@
 20)_ create folder Interfaces & Repository
 21)_ create RepositoryServiceProvider 
 22)_ Insert Update Delete Table Sections
+23)_ create doctors table & doctor_translations
+24)_ create doctor model & doctor_translations 
+25)_ create images table & model
+26)_ create DoctorFactory
+27)_ create DoctorTableSeeder
+28)_ create ImageFactory
+29)_ create ImageTableSeeder
+30)_ create Doctor controller
+31)_ 
+

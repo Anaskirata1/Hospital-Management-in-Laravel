@@ -14,11 +14,11 @@ class SectionRepository implements SectionRepositoryInterface
     }
 
     public function store($request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|unique:section_translations|min:4|max:255',
+     {
+    //     $validated = $request->validate([
+    //         'name' => 'required|unique:section_translations|min:4|max:255',
 
-        ]);
+    //     ]);
         Section::create([
             'name' => $request->input('name'),
         ]);
