@@ -2,6 +2,8 @@
 
 return array (
   'Choose' => 'Choose',
+  'Doctors' => 'Doctors',
+  'view_all' => 'view all',
   'Enabled' => 'Enabled',
   'Not_enabled' => 'Not_enabled',
   'Processes' => 'Processes',

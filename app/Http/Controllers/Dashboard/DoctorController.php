@@ -16,7 +16,7 @@ class DoctorController extends Controller
     public function index()
     {
         $doctors = Doctor::find(3);
-        dd($doctors->image) ;
+        // dd($doctors->image) ;
 
     }
 

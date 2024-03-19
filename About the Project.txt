@@ -28,5 +28,5 @@
 28)_ create ImageFactory
 29)_ create ImageTableSeeder
 30)_ create Doctor controller
-31)_ 
+31)_ install package joedixon/laravel-translation
 

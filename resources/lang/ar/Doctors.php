@@ -2,6 +2,8 @@
 
 return array (
   'Choose' => 'اختار من القائمة',
+  'Doctors' => ' الأطباء ',
+  'view_all' => ' عرض الكل ',
   'Enabled' => 'مفعل',
   'Not_enabled' => 'غير مفعل',
   'Processes' => 'العمليات',
