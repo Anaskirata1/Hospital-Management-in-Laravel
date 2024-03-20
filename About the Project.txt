@@ -29,4 +29,5 @@
 29)_ create ImageTableSeeder
 30)_ create Doctor controller
 31)_ install package joedixon/laravel-translation
+32_  create SectionFactory & SectionTableSeeder
 
