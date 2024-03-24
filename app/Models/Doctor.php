@@ -15,8 +15,14 @@ class Doctor extends Model
     public $fillable= ['email','email_verified_at','password','phone','price','name','appointments', 'section_id'];
 
 
-    public function image(): MorphOne
+
+    public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function section()
+    {
+    return $this->belongsTo('App\Models\section');
     }
 }
